@@ -1,5 +1,5 @@
 from app import exm
-from random import choice
+from random import randrange
 from math import factorial
 
 @exm.route('/')
@@ -17,6 +17,7 @@ def personal_data():
 
 @exm.route('/random_number')
 def random_number():
-    number = choice(range(101))
-    if number < 50: return number * 1.5
-    else: return factorial(number)
+    t = randrange(0, 100)
+    if t < 50: 
+        return f"{t*1.5}"
+    return f"{factorial(t)}"
